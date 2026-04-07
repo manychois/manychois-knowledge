@@ -14,17 +14,21 @@ Canonical copies of reusable documentation used across PHP and other projects:
 From your project repository root (sibling clone layout: `projects/my-app` and `projects/documentation-standards`):
 
 ```bash
-git submodule add ../documentation-standards documentation/internal
+git -c protocol.file.allow=always submodule add ../documentation-standards documentation/internal
 git commit -m "Add shared documentation standards as submodule."
 ```
 
-New clones:
+(`protocol.file.allow=always` is required for some Git versions when the submodule URL is a local `../` path.)
+
+After you publish **documentation-standards** to a remote, update the submodule URL in the consuming repo (e.g. `git config submodule.documentation/internal.url https://github.com/org/documentation-standards.git`) so CI and other machines can clone without a sibling folder.
+
+New clones of the consuming project:
 
 ```bash
 git submodule update --init --recursive
 ```
 
-Adjust the relative URL (`../documentation-standards`) if your layout differs, or use an absolute repository URL after publishing.
+Adjust the relative URL (`../documentation-standards`) if your layout differs, or use the HTTPS/Git remote URL of this repository.
 
 ### Copy
 
