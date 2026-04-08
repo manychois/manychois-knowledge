@@ -5,13 +5,13 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Your Name",
-      "email": "you@example.com",
+      "name": "Siu Pang Tommy Choi",
+      "email": "manychois@manychois.com.au",
       "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=8.5"
+    "php": "^8.5"
   },
   "autoload": {
     "psr-4": {
@@ -20,7 +20,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Vendor\\Package\\Tests\\": "tests/"
+      "Vendor\\PackageTests\\": "tests/"
     }
   },
   "require-dev": {
@@ -28,17 +28,16 @@
     "phpstan/phpstan": "^2.1.46",
     "phpstan/phpstan-strict-rules": "^2.0.10",
     "squizlabs/php_codesniffer": "^4.0.1",
-    "slevomat/coding-standard": ">=8.28.1"
+    "slevomat/coding-standard": "^8.28.1"
   },
   "scripts": {
     "test": [
       "@putenv XDEBUG_MODE=coverage",
       "phpunit"
     ],
-    "phpcs": "phpcs --standard=phpcs.xml -s",
     "phpcbf": "phpcbf --standard=phpcs.xml || true",
+    "phpcs": "phpcs --standard=phpcs.xml -s",
     "phpstan": "phpstan analyse -c phpstan.dist.neon || true",
-    "analyse": "phpstan analyse -c phpstan.dist.neon",
     "code": [
       "@phpcbf",
       "@phpcs",
