@@ -1,0 +1,54 @@
+{
+  "name": "vendor/package",
+  "description": "Short description of the package.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Your Name",
+      "email": "you@example.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendor\\Package\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vendor\\Package\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^13.1.0",
+    "phpstan/phpstan": "^2.1.46",
+    "phpstan/phpstan-strict-rules": "^2.0.10",
+    "squizlabs/php_codesniffer": "^4.0.1",
+    "slevomat/coding-standard": ">=8.28.1"
+  },
+  "scripts": {
+    "test": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit"
+    ],
+    "phpcs": "phpcs --standard=phpcs.xml -s",
+    "phpcbf": "phpcbf --standard=phpcs.xml || true",
+    "phpstan": "phpstan analyse -c phpstan.dist.neon || true",
+    "analyse": "phpstan analyse -c phpstan.dist.neon",
+    "code": [
+      "@phpcbf",
+      "@phpcs",
+      "@phpstan"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
+  }
+}

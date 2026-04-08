@@ -7,6 +7,12 @@ Shared knowledge base: reusable documentation and conventions for **manychois** 
 | [`diataxis-framework-reference.md`](diataxis-framework-reference.md) | Diátaxis framework for technical writing (tutorials, how-to, reference, explanation). |
 | [`php-coding-standard.md`](php-coding-standard.md) | PHP style conventions (docblocks, structure, PHPUnit naming, etc.). |
 
+## Project templates
+
+| Path | Purpose |
+|------|---------|
+| [`templates/php-library/`](templates/php-library/) | Starting **composer.json**, **phpcs.xml**, **phpstan.dist.neon**, and **phpunit.xml** for a PHP library (placeholders for vendor namespace; PHPCS rules match the coding standard doc). |
+
 ## Using in a project
 
 ### Git submodule (recommended)
