@@ -7,7 +7,7 @@ Copy these files into a new repository root and adjust placeholders.
 | [`composer.json`](composer.json) | Package metadata, autoload, dev tools, Composer scripts. |
 | [`phpcs.xml`](phpcs.xml) | PHPCS: PSR-12 + PEAR docblocks + Slevomat rules (aligned with [`php-coding-standard.md`](../../php-coding-standard.md)). |
 | [`phpstan.dist.neon`](phpstan.dist.neon) | PHPStan `max` level on `src/` and `tests/`. |
-| [`phpunit.xml`](phpunit.xml) | PHPUnit testsuite + coverage for `src/`. |
+| [`phpunit.xml`](phpunit.xml) | PHPUnit testsuite + coverage for `src/` (excludes `*Trait.php` from coverage stats). |
 
 ## `composer.json` placeholders
 
