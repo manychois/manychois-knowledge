@@ -1,6 +1,6 @@
 # PHP Coding Style Guide
 
-PHP 8.4+ coding conventions.
+PHP 8.5+ coding conventions.
 
 ## File Structure
 
@@ -245,11 +245,11 @@ protected function createReadonlyList(iterable $source): IReadonlyList
 
 ## Test code (PHPUnit)
 
-- **Test method names** use snake_case segments: `test_<method>_<expect>_<optional condition>`.
+- **Test method names** use snake_case segments: `<method>_<expect>_<optional condition>`.
   - `<method>` is the API under test in `snake_case` (e.g. `render`, `children`, `has_children`, `component`).
   - `<expect>` states the outcome (e.g. `yields_resolved_text_nodes`, `throws_logic_exception`).
   - Add a trailing segment when the behaviour depends on a specific condition (e.g. `when_prop_children_absent`, `when_called_twice_for_same_name`).
-  - PHPUnit discovers methods by the `test_` prefix; the rest is descriptive, not `camelCase`.
+  - Add `#[Test]` attribute to each test method so PHPUnit discovers it without a `test_` prefix.
 - **One named class per file** for tests and shared helpers: the test case class lives in `tests/<Name>Test.php`; reusable doubles, fixture components, and stub resolvers live under `tests/Fixtures/` with a dedicated namespace segment (e.g. `Vendor\Project\Tests\Fixtures` if your test namespace is `Vendor\Project\Tests`) — one class per file, PSR-4 path matches the class name.
 - **Anonymous inline subclasses** of the class under test are acceptable for tiny, one-off scenarios when a named fixture file would add noise; prefer named fixtures when the same shape is reused or the setup is non-trivial.
 
